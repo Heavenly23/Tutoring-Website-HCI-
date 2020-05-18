@@ -1,1 +1,1 @@
-User reasearch documents will be included here.
+User research documents will be included here.
