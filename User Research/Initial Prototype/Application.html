@@ -11,7 +11,7 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="index.css">
 
@@ -46,21 +46,21 @@
   <br>
   <p><a href="#courses" id="linkref3">Application Form</a></p>
   <br>
-  <p><a href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="courseSearch"> Course Search</a></p>
+  <p><a onclick="display('1')" id="linkref3"><input type="checkbox" onclick="return false;" id="courseSearch"> Course Search</a></p>
   <br>
-  <p><a href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="time"> Time</a></p>
+  <p><a onclick="display('2')" href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="time"> Time</a></p>
   <br>
-  <p><a href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="langPreference"> Language Preference</a></p>
+  <p><a onclick="display('3')" href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="langPreference"> Language Preference</a></p>
   <br>
-  <p><a href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="studyArea"> Study Area</a></p>
+  <p><a onclick="display('4')" href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="studyArea"> Study Area</a></p>
   <br>
-  <p><a href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="tutorSearch"> Tutor Search</a></p>
+  <p><a onclick="display('5')" href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="tutorSearch"> Tutor Search</a></p>
   <br>
-  <p><a href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="apply"> Apply</a></p>
+  <p><a onclick="display('6')" href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="apply"> Apply</a></p>
   <br>
 </div>
 
-<div class="main">
+<div class="main" id="main_id">
 
   <div id="1" style="display:block;">
    <h3> Course Search</h3>
@@ -168,18 +168,35 @@
      </form>
    </div>
 
+
+
    <div id="4" style="display:none;">
      <h3>Study Area</h3>
      <hr>
+     <form>
+       <label for="places">Choose a study area:</label><br>
+         <input type="text" list="area" name="getstudyarea"  autocomplete="off">
+         <datalist id="area" >
+          <option value="Library">
+          <option value="Student Lounge">
+          <option value="Coffee Shop">
+          <option value="Park">
+          <option value="My room">
+         </datalist>
+      <br><br>
      <button onclick="checkInput_4(); return false;"
            style="color:white;background-color:brown;padding:
                    2%;border-color:brown;">Continue</button>
      <div class="loader" id="loading_4" style="display:none;"></div>
+     </form>
    </div>
+
+
 
    <div id="5" style="display:none;">
      <h3>Tutor Search</h3>
      <hr>
+     <h4> List of tutors that match your preference </h4>
      <button onclick="checkInput_5(); return false;"
            style="color:white;background-color:brown;padding:
                    2%;border-color:brown;">Continue</button>
@@ -196,7 +213,7 @@
    </div>
 
 
-
+ 
 
 
 </div>
