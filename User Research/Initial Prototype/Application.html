@@ -1,0 +1,225 @@
+<html>
+
+<head>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+  <link rel="stylesheet" href="index.css">
+
+
+</head>
+<!-- #e1b382 -->
+<body style="background:white;">
+
+    <div style="border-bottom: solid 5px darkblue;padding-bottom:1%;">
+
+    <div style="background:#F8F8F8;">
+      <a href="#" id="linkref" style="margin:5px;margin-right:0px;padding:0px;"><img src="log.png" width="50px" height="50px" /></a>
+      <a href="#" id="linkref" style="color:brown;margin:5px;margin-left:0px;font-size:16px;padding:0px;" ><b>TUTORING APP</b></a>
+     <a href="sign_in.html" id="linkButton" style="color:#936A4A;" > Sign Out </a>
+      </div>
+
+      <div style="margin-top:4%;">
+        <div class="nava" >
+
+         <a href="#tutors" id="linkref4"> Welcome</a>
+         <a href="#tutees" id="linkref4"> My Profile </a>
+         <a href="#tutoringCenter" id="linkref4"> My Tutors</a>
+         <a href="study_areas" id="linkref4"> My Tutees</a>
+         <a href="#courses" id="linkref4">Apply</a>
+          </div>
+
+        </div>
+</div>
+
+<div class="content">
+<div class="pane">
+  <br>
+  <p><a href="#courses" id="linkref3">Application Form</a></p>
+  <br>
+  <p><a href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="courseSearch"> Course Search</a></p>
+  <br>
+  <p><a href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="time"> Time</a></p>
+  <br>
+  <p><a href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="langPreference"> Language Preference</a></p>
+  <br>
+  <p><a href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="studyArea"> Study Area</a></p>
+  <br>
+  <p><a href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="tutorSearch"> Tutor Search</a></p>
+  <br>
+  <p><a href="#courses" id="linkref3"><input type="checkbox" onclick="return false;" id="apply"> Apply</a></p>
+  <br>
+</div>
+
+<div class="main">
+
+  <div id="1" style="display:block;">
+   <h3> Course Search</h3>
+   <hr>
+   <form>
+   <label for="courses"> Course name <span style="color:red;">* </label>
+   <br>
+   <input type="text" list="courses" name="getcourse" pattern="AMS|CSE|PHY|BUS|WRT" autocomplete="off">
+   <datalist id="courses" >
+    <option value="AMS">
+    <option value="CSE">
+    <option value="PHY">
+    <option value="BUS">
+    <option value="WRT">
+   </datalist>
+   <br>
+    <br>
+   <label for="coursesnum"> Course Number <span style="color:red;">* </label>
+   <br>
+   <input list="coursesNumber"  name="courseNum" autocomplete="off">
+   <datalist id="coursesNumber" >
+   </datalist>
+   <br> <br>
+   <input type="submit" value="Continue" style="color:white;background-color:brown;padding:
+                 2%;border-color:brown;" onclick="checkInput(); return false;">
+      <div class="loader" id="loading" style="display:none;"></div>
+   </form>
+  </div>
+
+
+    <div id="2" style="display:none;">
+      <h3> Time</h3>
+      <hr>
+      <form>
+        <div id="moreTime">
+        <label for="times">Choose a day:<span style="color:red;"> * </label><br>
+          <input type="text" list="days" name="getdays"  autocomplete="off">
+          <datalist id="days" >
+           <option value="Monday">
+           <option value="Tuesday">
+           <option value="Wednesday">
+           <option value="Thursday">
+           <option value="Friday">
+           <option value="Saturday">
+           <option value="Sunday">
+          </datalist>
+        <br>
+        <br>
+        <label for="start"> Start time: <span style="color:red;">* </label>
+        <br>
+        <input type="time" id="startTime" name="startTime"><br><br>
+        <label for="end"> End time: <span style="color:red;">* </label>
+        <br>
+        <input type="time" id="endTime" name="endTime"><br><br>
+       <button onclick="addTime(); return false;" id="timeButton"
+             style="color:white;background-color:brown;padding:
+                     2%;border-color:brown;"> <span class="glyphicon glyphicon-plus"></span>Add Time </button><br><br>
+
+      <button onclick="checkInput_2(); return false;"
+                           style="color:white;background-color:brown;padding:
+                                   2%;border-color:brown;">Continue</button>
+        <br><div id="10"></div>
+      </div>
+        <div class="loader" id="loading_2" style="display:none;"></div>
+       </form>
+
+
+
+
+
+
+    </div>
+    <div id="3" style="display:none;">
+      <h3> Language Preference</h3>
+      <hr>
+      <form>
+        <label for="languages">Primary Language Preference: </label><br>
+          <input type="text" list="lang" name="getlangs"  autocomplete="off">
+          <datalist id="lang" >
+           <option value="English">
+           <option value="Spanish">
+           <option value="French">
+           <option value="Chinese">
+           <option value="Japanese">
+           <option value="Korean">
+           <option value="Italian">
+          </datalist>
+        <br><br>
+        <label for="languages">Secondary Language Preference: </label><br>
+          <input type="text" list="lang" name="getlangs"  autocomplete="off">
+          <datalist id="lang" >
+           <option value="English">
+           <option value="Spanish">
+           <option value="French">
+           <option value="Chinese">
+           <option value="Japanese">
+           <option value="Korean">
+           <option value="Italian">
+          </datalist>
+        <br><br>
+        <button onclick="checkInput_3(); return false;"
+              style="color:white;background-color:brown;padding:
+                      2%;border-color:brown;">Continue</button>
+        <div class="loader" id="loading_3" style="display:none;"></div>
+     </form>
+   </div>
+
+   <div id="4" style="display:none;">
+     <h3>Study Area</h3>
+     <hr>
+     <button onclick="checkInput_4(); return false;"
+           style="color:white;background-color:brown;padding:
+                   2%;border-color:brown;">Continue</button>
+     <div class="loader" id="loading_4" style="display:none;"></div>
+   </div>
+
+   <div id="5" style="display:none;">
+     <h3>Tutor Search</h3>
+     <hr>
+     <button onclick="checkInput_5(); return false;"
+           style="color:white;background-color:brown;padding:
+                   2%;border-color:brown;">Continue</button>
+     <div class="loader" id="loading_5" style="display:none;"></div>
+   </div>
+
+   <div id="6" style="display:none;">
+     <h3>Apply</h3>
+     <hr>
+     <button onclick="checkInput_6(); return false;"
+           style="color:white;background-color:brown;padding:
+                   2%;border-color:brown;">Continue</button>
+     <div class="loader" id="loading_6" style="display:none;"></div>
+   </div>
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+  <!-- Footer -------------------------------- -->
+  <nav class="navbar-wrapper navbar-default navbar-fixed-bottom" >
+    <div class="container-fluid" style="background-color:brown;">
+      <p class="navbar-text pull-left" style="color:white;">&copy; 2020 SUNY Korea Tutoring Center.</p>
+      <a href="#" class="btn navbar-btn btn-danger pull-right">Subscribe</a>
+    </div>
+  </nav>
+
+<script src="index.js"></script>
+</body>
+
+</html>
