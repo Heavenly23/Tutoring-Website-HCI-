@@ -1,0 +1,183 @@
+<html>
+
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="index.css">
+
+
+
+
+</head>
+<!-- #e1b382 -->
+<body style="background:white;">
+
+<div style="border-bottom: solid 5px darkblue;padding-bottom:1%;">
+
+<div style="background:#F8F8F8;">
+<a href="#" id="linkref" style="margin:5px;margin-right:0px;padding:0px;"><img src="images/log.png" width="50px" height="50px" /></a>
+<a href="#" id="linkref" style="color:brown;margin:5px;margin-left:0px;font-size:16px;padding:0px;" ><b>TUTORING APP</b></a>
+<a href="sign_in.html" id="linkButton" style="color:#936A4A;" > Sign Out </a>
+</div>
+
+<div style="margin-top:4%;">
+<div class="nava" >
+
+<a href="#tutors" id="linkref4"> Welcome</a>
+<a href="#tutees" id="linkref4"> My Profile </a>
+<a href="#tutoringCenter" id="linkref4"> My Tutors</a>
+<a href="#courses" id="linkref4">Apply</a>
+<a href="#courses" id="linkref4" style="background-color:#f5f5f5;color:black;">Edit Schedule</a>
+</div>
+</div>
+</div>
+
+<div class="main" style="margin-left:5%;width:auto;">
+  <h4> Edit Schedule With Tutors </h4>
+  <hr>
+  <table style="width:100%;margin-bottom:1%;background-color:white;">
+    <tr>
+      <th>Name</th>
+      <th>Course</th>
+      <th>Time</th>
+      <th>Language Preference
+      <th>Study Area</th>
+      <th>Complete</th>
+    </tr>
+    <tr>
+      <td> Baribie Roberts Doe </td>
+      <td> CSE-214</td>
+      <td> <a onclick="document.getElementById('weekly-schedule').style.display = 'block';
+                       document.getElementById('indicator').style.display = 'block';">Click here</a> </td>
+      <td> English
+        <br><br>
+        <input type="text" list="lang-selected" name="getlangsFromTutor"  autocomplete="off">
+        <datalist id="lang-selected">
+          <option value="English">
+            <option value="Spanish">
+              <option value="French">
+                      </datalist>
+      </td>
+      <td> Coffee Shop
+        <br><br>
+        <input type="text" list="place-selected" name="getplaceFromTutor"  autocomplete="off">
+        <datalist id="place-selected">
+          <option value="Library">
+            <option value="Study Room">
+              <option value="Coffee Shop">
+                      </datalist></td>
+      <td> <button onclick="checkInput_6(); return false;"
+        style="color:white;background-color:brown;padding:
+        2%;border-color:brown;">Inform Tutor</button> </td>
+      </tr>
+
+      </table>
+      <hr>
+      <div id="weekly-schedule" style="display:none;">
+      <table id="time_table">
+        <tr>
+          <th></th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+        </tr>
+        <tr>
+          <th>9:00 - 10:00</th>
+          <td></td>
+          <td></td>
+          <td style="background-color:yellow;">Available</td>
+          <td></td>
+          <td></td>
+
+        </tr>
+        <tr>
+          <th>10:00 - 11:00</th>
+          <td></td>
+          <td></td>
+          <td style="background-color:yellow;">Available</td>
+          <td></td>
+          <td></td>
+
+        </tr>
+        <tr>
+          <th>11:00 - 12:00</th>
+          <td></td>
+          <td></td>
+          <td style="background-color:yellow;">Available</td>
+          <td></td>
+          <td></td>
+
+        </tr>
+        <tr>
+          <th>12:00 - 13:00</th>
+          <td></td>
+          <td style="background-color:pink;">My_Session</td>
+          <td></td>
+          <td></td>
+          <td style="background-color:pink;">My_Session</td>
+
+        </tr>
+        <tr>
+          <th>13:00 - 14:00</th>
+          <td></td>
+          <td style="background-color:yellow;"> Available</td>
+          <td></td>
+          <td></td>
+          <td style="background-color:pink;">My_Session</td>
+
+        </tr>
+        <tr>
+          <th>14:00 - 15:00</th>
+          <td></td>
+          <td style="background-color:yellow;">Available</td>
+          <td></td>
+          <td></td>
+          <td style="background-color:yellow;">Available</td>
+
+        </tr>
+        <tr>
+          <th>15:00 - 16:00</th>
+          <td style="background-color:yellow;">Available</td>
+          <td></td>
+          <td style="background-color:yellow;">Available</td>
+          <td></td>
+          <td></td>
+
+        </tr>
+        <tr>
+          <th>16:00 - 17:00</th>
+          <td style="background-color:yellow;">Available</td>
+          <td></td>
+          <td style="background-color:yellow;">Available</td>
+          <td></td>
+          <td></td>
+
+        </tr>
+
+      </table>
+      </div>
+<div id="indicator" >
+   <p> <button style="width:20px;height:20px;background-image:url(images/gray.png);"></button> Not available </p>
+   <p> <button style="width:20px;height:20px;background-color:yellow;"></button> Available </p>
+   <p> <button style="width:20px;height:20px;background-color:pink;"></button> My session time </p>
+</div>
+
+</div>
+
+</div>
+
+  <script src="index.js"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@ getcourses.addEventListener('input',function(){
    courseNumber.removeChild(courseNumber.lastChild);
    }
    document.getElementsByName('courseNum')[0].value = '';
-   document.getElementById("courseSearch").checked = false;
+   // document.getElementById("courseSearch").checked = false;
    var newOption = document.createElement("option");
    newOption.value = "Select Course Number";
    courseNumber.appendChild(newOption);
@@ -31,7 +31,7 @@ getcourses.addEventListener('input',function(){
 });
 
 getcourseNumber.addEventListener('input',function(){
-  document.getElementById("courseSearch").checked = false;
+  // document.getElementById("courseSearch").checked = false;
 });
 
 function addCourseNumber(list,courseNumber){
@@ -118,7 +118,23 @@ function display(id){
   document.getElementById("4").style.display = "none";
   document.getElementById("5").style.display = "none";
   document.getElementById("6").style.display = "none";
-  document.getElementById(id).style.display = "block";;
-
-
+  document.getElementById(id).style.display = "block";
 }
+
+$("#weekly-schedule").dayScheduleSelector({
+     days        : [0, 1, 2, 3, 4, 5, 6],
+     startTime   :'08:00',
+     endTime     :'20:00',
+     interval    : 30,
+     stringDays  : ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+     template    :'<div class="day-schedule-selector">'         +
+                    '<table class="schedule-table">'            +
+                    '<thead class="schedule-header"></thead>'   +
+                    '<tbody class="schedule-rows"></tbody>'   +
+                    '</table>'
+                    '<div>'
+});
+
+$("#weekly-schedule").data('artsy.dayScheduleSelector').deserialize({
+  '0': [['09:30','11:00'], ['13:00','16:30']]
+});
