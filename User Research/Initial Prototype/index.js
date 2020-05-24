@@ -1,40 +1,105 @@
+//information to be saved in localstorage for later use
+var course;
+var time = [];
+var language_preference = [];
+var studyArea;
+var tutor;
+
+//selected course_name,course_number,language
 var getcourses = document.getElementsByName('getcourse')[0];
 var getcourseNumber = document.getElementsByName('courseNum')[0];
 var courseNumber = document.getElementById('coursesNumber');
+var study_area = "Library";
 
+//select courses
 getcourses.addEventListener('input',function(){
   while( courseNumber.hasChildNodes() ){
    courseNumber.removeChild(courseNumber.lastChild);
    }
    document.getElementsByName('courseNum')[0].value = '';
-   // document.getElementById("courseSearch").checked = false;
+
    var newOption = document.createElement("option");
    newOption.value = "Select Course Number";
    courseNumber.appendChild(newOption);
 
    if(this.value == "AMS"){
-     addCourseNumber(['151','161','210','261','301','310','315'],courseNumber);
+     addCourseNumber(['151','161','210','261','301','310','315']);
    }
    else if(this.value == "BUS"){
-     addCourseNumber(['210','310','315'],courseNumber);
+     addCourseNumber(['210','310','315']);
    }
    else if(this.value == "CSE"){
-     addCourseNumber(['101','114','214','215','216'],courseNumber);
+     addCourseNumber(['101','114','214','215','216']);
    }
    else if(this.value == "PHY"){
-     addCourseNumber(['131','132'],courseNumber);
+     addCourseNumber(['131','132']);
    }
    else if(this.value == "WRT"){
-     addCourseNumber(['192','194','101','102'],courseNumber);
+     addCourseNumber(['192','194','101','102']);
    }
-   else{addCourseNumber([],courseNumber);}
+   else{addCourseNumber([]);}
 });
 
-getcourseNumber.addEventListener('input',function(){
-  // document.getElementById("courseSearch").checked = false;
-});
+//check input field before loading a new content
+function checkInput(id){
+  if(id == '1'){
+          var selectedCourse = document.getElementsByName('getcourse')[0].value;
+          var selectedCourseNumber =document.getElementsByName('courseNum')[0].value;
+          if(selectedCourseNumber == "Select Course Number" || selectedCourseNumber == "" || selectedCourse == ""){
+            alert("Please fill in the required inputs");
+          }
+          else{
+            document.getElementById("loading").style.display = "block";
+            localStorage.setItem("course", selectedCourse+'-'+selectedCourseNumber);
+            render("time.html");
+          }
 
-function addCourseNumber(list,courseNumber){
+        }
+
+else if(id == '2'){
+  document.getElementById("loading_2").style.display = "block";
+  render("language.html");
+}
+else if(id == '3'){
+  document.getElementById("loading_3").style.display = "block";
+  var primary_language = document.getElementsByName('getlangs')[0].value;
+  var secondary_language = document.getElementsByName('second_getlangs')[0].value;
+  localStorage.setItem("primary_preference_language",primary_language);
+  localStorage.setItem("secondary_preference_language",secondary_language);
+  render("study_area.html");
+}
+else if(id == '4'){
+  localStorage.setItem("area","Library");
+  render("tutor_search.html");
+}
+else if(id == '5'){
+  render("apply.html");
+}
+else if(id == '6'){
+  render("welcome.html");
+}
+return true;}
+
+//load a different content
+function render(page){
+  setTimeout(function(){
+        window.location.href = page;
+  }, 300);
+}
+
+//Add tutoring session time
+function addTime(){
+  var time = document.getElementById("addTimeButton");
+  var next = document.getElementById("continueButton");
+  var div1 = document.getElementById('moreTime');
+  var div2 = document.getElementById('10');
+  div2.innerHTML = div1.innerHTML;
+  $('#addTimeButton').appendTo('#11');
+  $('#continueButton').appendTo('#11');
+}
+
+//add course numbers to the datalist based on the selected course name
+function addCourseNumber(list){
    list.forEach((item, i) => {
      var newOption = document.createElement("option");
      newOption.value = item;
@@ -42,99 +107,28 @@ function addCourseNumber(list,courseNumber){
   });
 }
 
-
-function checkInput(){
-  var selectedCourse = document.getElementsByName('getcourse')[0].value;
-  var selectedCourseNumber =document.getElementsByName('courseNum')[0].value;
-  if(selectedCourseNumber == "Select Course Number" || selectedCourseNumber == "" || selectedCourse == ""){
-    alert("Please fill in the required inputs");
-  }
-  else{
-    document.getElementById("loading").style.display = "block";
-    setTimeout(function(){
-          document.getElementById("courseSearch").checked = true;
-          document.getElementById("1").style.display = "none";
-          document.getElementById("2").style.display = "block";
-    }, 3000);
-
-  }
-
+//preview the application to be submitted
+function preview(){
+  document.getElementById('course_display').innerHTML = localStorage.getItem("course");
+  document.getElementById('lang_display').innerHTML = localStorage.getItem("primary_preference_language")+','+localStorage.getItem("secondary_preference_language");
+  document.getElementById('time_display').innerHTML = "Time not available";
+  document.getElementById('area_display').innerHTML = localStorage.getItem("area");
+  var divContents = $(".application").html();
+  var printWindow = window.open('', '', 'height=400,width=800');
+  printWindow.document.write('<html><head><title>Tester - Application</title>');
+  printWindow.document.write('</head><body >');
+  printWindow.document.write(divContents);
+  printWindow.document.write('</body></html>');
+  printWindow.document.close();
+  printWindow.open();
 }
 
-function addTime(){
-  var div1 = document.getElementById('moreTime');
-  var div2 = document.getElementById('10');
-  div2.innerHTML = div1.innerHTML;
-  alert('This is a mess!I will fix it, professor');
+//update Schedule
+function updateSchedule(){
+   var language =  document.getElementsByName('getlangsFromTutor')[0];
+   var area =  document.getElementsByName('getplaceFromTutor')[0];
+   localStorage.setItem("updated_language",language);
+   localStorage.setItem("updated_area",area);
+   // render("informTutor.html");
 
 }
-function checkInput_2(){
-  document.getElementById("loading_2").style.display = "block";
-  setTimeout(function(){
-        document.getElementById("time").checked = true;
-        document.getElementById("2").style.display = "none";
-        document.getElementById("3").style.display = "block";
-  }, 3000);
-}
-
-function checkInput_3(){
-  document.getElementById("loading_3").style.display = "block";
-  setTimeout(function(){
-        document.getElementById("langPreference").checked = true;
-        document.getElementById("3").style.display = "none";
-        document.getElementById("4").style.display = "block";
-  }, 3000);
-}
-
-function checkInput_4(){
-  document.getElementById("loading_4").style.display = "block";
-  setTimeout(function(){
-        document.getElementById("studyArea").checked = true;
-        document.getElementById("4").style.display = "none";
-        document.getElementById("5").style.display = "block";
-  }, 3000);
-}
-function checkInput_5(){
-  document.getElementById("loading_5").style.display = "block";
-  setTimeout(function(){
-        document.getElementById("tutorSearch").checked = true;
-        document.getElementById("5").style.display = "none";
-        document.getElementById("6").style.display = "block";
-  }, 3000);
-}
-function checkInput_6(){
-  document.getElementById("loading_6").style.display = "block";
-  setTimeout(function(){
-        document.getElementById("apply").checked = true;
-        document.getElementById("6").style.display = "none";
-        document.getElementById("7").style.display = "block";
-  }, 3000);
-}
-
-function display(id){
-  document.getElementById("1").style.display = "none";
-  document.getElementById("2").style.display = "none";
-  document.getElementById("3").style.display = "none";
-  document.getElementById("4").style.display = "none";
-  document.getElementById("5").style.display = "none";
-  document.getElementById("6").style.display = "none";
-  document.getElementById(id).style.display = "block";
-}
-
-$("#weekly-schedule").dayScheduleSelector({
-     days        : [0, 1, 2, 3, 4, 5, 6],
-     startTime   :'08:00',
-     endTime     :'20:00',
-     interval    : 30,
-     stringDays  : ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
-     template    :'<div class="day-schedule-selector">'         +
-                    '<table class="schedule-table">'            +
-                    '<thead class="schedule-header"></thead>'   +
-                    '<tbody class="schedule-rows"></tbody>'   +
-                    '</table>'
-                    '<div>'
-});
-
-$("#weekly-schedule").data('artsy.dayScheduleSelector').deserialize({
-  '0': [['09:30','11:00'], ['13:00','16:30']]
-});

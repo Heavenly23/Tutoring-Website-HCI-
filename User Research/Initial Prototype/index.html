@@ -59,12 +59,19 @@
 
 </div>
 </div>
-    <div id="navigation">
+    <div id="navigation" >
+
       <a href="#" id="linkref" style="margin:5px;margin-right:0px;padding:0px;"><img src="images/log.png" width="50px" height="50px" /></a>
       <a href="#" id="linkref" style="color:white;margin:5px;margin-left:0px;font-size:16px;padding:0px;" ><b>TUTORING APP</b></a>
-    <a href="sign_in.html" id="linkButton"> Sign In </a>
+     <!-- <a class="dropdown" id="linkButton"> Sign In -->
+      <div class="dropdown" style="float:right;">
+        <button class="dropbtn"  id="linkButton">Sign In</button>
+        <div class="dropdown-content">
+          <a href="Approve_schdule_change.html">Tutor</a>
+          <a href="course_search.html">Tutee</a>
+        </div>
       </div>
-
+</div>
 
     <nav class="nav" id="nav_add" data-spy="affix" data-offset-top="530">
      <a href="#tutors" id="linkref2"> Tutors</a>
@@ -123,13 +130,11 @@
 
 </div>
 
-<!-- Footer -------------------------------- -->
-<nav class="navbar-wrapper navbar-default" >
-  <div class="container-fluid" style="background-color:brown;">
-    <p class="navbar-text pull-left" style="color:white;">&copy; 2020 SUNY Korea Tutoring Center.</p>
-    <a href="#" class="btn navbar-btn btn-danger pull-right">Subscribe</a>
-  </div>
-</nav>
+<!-- Footer -->
+<footer class="page-footer font-small blue" style="background-color:brown;color:white;margin-top:2%;">
+<div class="footer-copyright text-center py-3">© 2020 Copyright: SunyKorea Tutoring Center
+</div>
+</footer>
   </body>
 
   </html>

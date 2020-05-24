@@ -27,7 +27,9 @@
 <div style="background:#F8F8F8;">
 <a href="#" id="linkref" style="margin:5px;margin-right:0px;padding:0px;"><img src="images/log.png" width="50px" height="50px" /></a>
 <a href="#" id="linkref" style="color:brown;margin:5px;margin-left:0px;font-size:16px;padding:0px;" ><b>TUTORING APP</b></a>
-<a href="sign_in.html" id="linkButton" style="color:#936A4A;" > Sign Out </a>
+<a href="sign_in.html" id="linkButton" style="color:brown;" > <i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out </a>
+<a href="sign_in.html" id="linkButton" style="color:brown;" > <i class="fa fa-bell" aria-hidden="true"></i> Notification </a>
+<a href="sign_in.html" id="linkButton" style="color:brown;" > <i class="fa fa-envelope" aria-hidden="true"></i> Message </a>
 </div>
 
 <div style="margin-top:4%;">
@@ -59,24 +61,22 @@
       <td> CSE-214</td>
       <td> <a onclick="document.getElementById('weekly-schedule').style.display = 'block';
                        document.getElementById('indicator').style.display = 'block';">Click here</a> </td>
-      <td> English
-        <br><br>
-        <input type="text" list="lang-selected" name="getlangsFromTutor"  autocomplete="off">
+      <td>
+        <input style="background-color:#f5f5f5;" type="text" list="lang-selected" name="getlangsFromTutor"  autocomplete="off">
         <datalist id="lang-selected">
           <option value="English">
             <option value="Spanish">
               <option value="French">
                       </datalist>
       </td>
-      <td> Coffee Shop
-        <br><br>
-        <input type="text" list="place-selected" name="getplaceFromTutor"  autocomplete="off">
+      <td>
+        <input style="background-color:#f5f5f5;" type="text" list="place-selected" name="getplaceFromTutor"  autocomplete="off">
         <datalist id="place-selected">
           <option value="Library">
             <option value="Study Room">
               <option value="Coffee Shop">
                       </datalist></td>
-      <td> <button onclick="checkInput_6(); return false;"
+      <td> <button onclick="updateSchedule(); return false;"
         style="color:white;background-color:brown;padding:
         2%;border-color:brown;">Inform Tutor</button> </td>
       </tr>
@@ -177,7 +177,8 @@
 </div>
 
 </div>
+</div>
 
-  <script src="index.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,183 @@
+<html>
+
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="index.css">
+<style>
+
+  ul li:nth-child(6) .fa{
+    background-color:brown;
+    color:white;
+
+  }
+
+  ul li:nth-child(6) .fa::after{
+    background-color:brown;
+  }
+
+  ul li:nth-child(1) .fa,
+  ul li:nth-child(2) .fa,
+  ul li:nth-child(3) .fa,
+  ul li:nth-child(4) .fa,
+  ul li:nth-child(5) .fa{
+    background-color:brown;
+    color:white;
+    opacity:0.5;
+  }
+
+  ul li:nth-child(1) .fa::after,
+  ul li:nth-child(2) .fa::after,
+  ul li:nth-child(3) .fa::after,
+  ul li:nth-child(4) .fa::after,
+  ul li:nth-child(5) .fa::after{
+    background-color:brown;
+    opacity:0.5;
+  }
+  </style>
+
+</head>
+<!-- #e1b382 -->
+<body style="background:white;">
+
+<div style="border-bottom: solid 5px darkblue;padding-bottom:1%;">
+
+<div style="background:#F8F8F8;">
+<a href="#" id="linkref" style="margin:5px;margin-right:0px;padding:0px;"><img src="images/log.png" width="50px" height="50px" /></a>
+<a href="#" id="linkref" style="color:brown;margin:5px;margin-left:0px;font-size:16px;padding:0px;" ><b>TUTORING APP</b></a>
+<a href="sign_in.html" id="linkButton" style="color:brown;" > <i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out </a>
+<a href="sign_in.html" id="linkButton" style="color:brown;" > <i class="fa fa-bell" aria-hidden="true"></i> Notification </a>
+<a href="sign_in.html" id="linkButton" style="color:brown;" > <i class="fa fa-envelope" aria-hidden="true"></i> Message </a>
+</div>
+
+<div style="margin-top:4%;">
+<div class="nava" >
+
+<a href="#tutors" id="linkref4"> Welcome</a>
+<a href="#tutees" id="linkref4"> My Profile </a>
+<a href="#tutoringCenter" id="linkref4"> My Tutors</a>
+<a href="#courses" id="linkref4" style="background-color:#f5f5f5;color:black;">Apply</a>
+<a href="#courses" id="linkref4">Edit Schedule</a>
+</div>
+
+</div>
+</div>
+
+<div class="row">
+<div class="pane">
+<h4 style="margin-left:20px;">Application Progress</h4>
+<ul>
+<li>
+<i class="fa fa-check" aria-hidden="true"></i>
+<a style="color:brown;" id="linkref3">Course Search</a>
+</li>
+
+<li>
+<i class="fa fa-check" aria-hidden="true"></i>
+<a id="linkref3" style="color:brown;">Time</a>
+</li>
+
+<li>
+<i class="fa fa-check" aria-hidden="true"></i>
+<a id="linkref3" style="color:brown;">Language Preference</a>
+</li>
+
+<li>
+<i class="fa fa-check" aria-hidden="true"></i>
+<a id="linkref3" style="color:brown;">Study Area</a>
+</li>
+
+<li>
+<i class="fa fa-check" aria-hidden="true"></i>
+<a id="linkref3" style="color:brown;">Tutor Search</a>
+</li>
+
+<li>
+<i class="fa fa-refresh" aria-hidden="true"></i>
+<a id="linkref3" style="color:brown;">Apply</a>
+</li>
+</ul>
+</div>
+
+<div class="main" id="main_id">
+<div id="6">
+  <h3>Apply</h3>
+  <hr>
+  <div class="pages" >
+    <pre style="color:gray;"><h4><b>TERMS OF SERVICE AGREEMENT</b></h4>
+LAST REVISION: 5/24/2020
+
+PLEASE READ THIS TERMS OF SERVICE AGREEMENT CAREFULLY.BY USING THIS WEBSITE OR ORDERING PRODUCTS
+FROM THIS WEBSITE YOU AGREE TO BE BOUND BY ALL OF THE TERMS AND CONDITIONS OF THIS AGREEMENT.
+
+This Terms of Service Agreement (the "Agreement") governs your use of this website, Tutoring app.
+Agreement includes, and incorporates by this reference, the policies and guidelines referenced below.
+Tutoring Center reserves the right to change or revise the terms and conditions of this Agreement at
+any time by posting any changes or a revised Agreement on this Website. Tutoring Center will alert you
+that changes or revisions have been made by indicating on the top of this Agreement the date it was
+last revised. The changed or revised Agreement will be effective immediately after it is posted on
+this Website. Your use of the Website following the posting any such changes or of a revised
+Agreement will constitute your acceptance of any such changes or revisions. Tutoring Center
+encourages you to review this Agreement whenever you visit the Website to make sure that you understand
+the terms and conditions governing use of the Website. This Agreement does not alter in any way the
+terms or conditions of any other written agreement you may have with Tutoring Center for other services.
+If you do not agree to this Agreement (including any referenced policies or guidelines), please
+immediately terminate your use of the Website.
+</pre>
+<div class="form-group">
+  <div class="col-sm-offset-0 col-sm-0">
+    <div class="checkbox">
+      <label><input type="checkbox">I agree to the terms and conditions</label>
+    </div>
+  </div>
+</div>
+<br>
+    <input type="submit" value="Preview" class="btn" onclick="preview(); return false;">
+
+    <input type="submit" value="Submit" class="btn" style="background-color:#4BB543;border-color:#4BB543;" onclick="checkInput('6'); return false;">
+    <div class="loader" id="loading_6" style="display:none;"></div>
+  </div>
+</div>
+</div>
+
+<div class="application" style="background-color:pink;display:none;">
+<div  style="background-color:#f5f5f5;">
+<img src="images/log.png" width="50px" height="50px" />
+<br>
+<h2 style="text-align:center;"> Tutee Application </h2>
+<hr>
+<h3> Personal info </h3>
+<h4> Name:<span style="background-color:white;color:brown;">Tester</span> </h4>
+<h4> Grade:<span style="background-color:white;color:brown;">Junior</span> </h4>
+<hr>
+<h3> Preferred Session Schedule </h3>
+<h4>Course:<span style="background-color:white;color:brown;" id='course_display'> </span> </h4>
+<h4>Time:<span style="background-color:white;color:brown;" id='time_display'> </span> </h4>
+<h4>Language Preference:<span id='lang_display' style="background-color:white;color:brown;"> </span> </h4>
+<h4>Study Area: <span id='area_display' style="background-color:white;color:brown;"> </span> </h4>
+<hr>
+</div>
+    </div>
+  <script src="index.js"></script>
+
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue" style="background-color:brown;color:white;margin-top:2%;">
+<div class="footer-copyright text-center py-3">© 2020 Copyright: SunyKorea Tutoring Center
+</div>
+</footer>
+
+
+</body>
+</html>
