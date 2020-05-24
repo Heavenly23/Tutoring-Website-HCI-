@@ -133,10 +133,6 @@ function updateSchedule(){
 
 }
 
-function confirm(){
-   
-}
-
-function delete(){
-
+function submitApplication(){
+  render("Application_submitted.html");
 }

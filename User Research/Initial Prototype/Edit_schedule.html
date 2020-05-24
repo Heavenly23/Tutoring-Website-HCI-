@@ -58,7 +58,7 @@
     </tr>
     <tr>
       <td> Baribie Roberts Doe </td>
-      <td> CSE-214</td>
+      <td> <span id="course_approve"></span></td>
       <td> <a onclick="document.getElementById('weekly-schedule').style.display = 'block';
                        document.getElementById('indicator').style.display = 'block';">Click here</a> </td>
       <td>
@@ -77,8 +77,7 @@
               <option value="Coffee Shop">
                       </datalist></td>
       <td> <button onclick="updateSchedule(); return false;"
-        style="color:white;background-color:brown;padding:
-        2%;border-color:brown;">Inform Tutor</button> </td>
+        class='btn'>Inform Tutor</button> </td>
       </tr>
 
       </table>
@@ -180,5 +179,9 @@
 </div>
 
 <script src="index.js"></script>
+<script>
+   var course_2 = document.getElementById("course_approve");
+   course_2.innerHTML = localStorage.getItem("course");
+</script>
 </body>
 </html>
