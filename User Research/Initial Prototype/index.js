@@ -125,10 +125,18 @@ function preview(){
 
 //update Schedule
 function updateSchedule(){
-   var language =  document.getElementsByName('getlangsFromTutor')[0];
-   var area =  document.getElementsByName('getplaceFromTutor')[0];
+   var language =  document.getElementsByName('getlangsFromTutor')[0].value;
+   var area =  document.getElementsByName('getplaceFromTutor')[0].value;
    localStorage.setItem("updated_language",language);
    localStorage.setItem("updated_area",area);
-   // render("informTutor.html");
+   render("informTutor.html");
+
+}
+
+function confirm(){
+   
+}
+
+function delete(){
 
 }

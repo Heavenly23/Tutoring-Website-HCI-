@@ -26,7 +26,7 @@
 <a href="#" id="linkref" style="margin:5px;margin-right:0px;padding:0px;"><img src="images/log.png" width="50px" height="50px" /></a>
 <a href="#" id="linkref" style="color:brown;margin:5px;margin-left:0px;font-size:16px;padding:0px;" ><b>TUTORING APP</b></a>
 <a href="sign_in.html" id="linkButton" style="color:brown;" > <i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out </a>
-<a href="sign_in.html" id="linkButton" style="color:brown;" > <i class="fa fa-bell" aria-hidden="true"></i> Notification </a>
+<a href="sign_in.html" id="linkButton" style="color:gray;" > <i class="fa fa-bell" aria-hidden="true"></i> Notification </a>
 <a href="sign_in.html" id="linkButton" style="color:brown;" > <i class="fa fa-envelope" aria-hidden="true"></i> Message </a>
 </div>
 
@@ -55,18 +55,24 @@
     </tr>
     <tr>
       <td> Baribie Roberts Doe </td>
-      <td> CSE-214</td>
-      <td> <a onclick="document.getElementById('weekly-schedule').style.display = 'block';
-                       document.getElementById('indicator').style.display = 'block';">Click here</a> </td>
+      <td> <span id="course_approve"></span></td>
+      <td> <pre>
+o Tuesday(12-13)
+ o Friday (12-14) </pre></td>
       <td>
-        <span id="course_approve"></span>
+        <span style="padding:10px;" id="lang_approve"></span>
       </td>
       <td>
-       <span id="area_approve"></span>
+       <span style="padding:10px;" id="area_approve"></span>
       </td>
-      <td> <button onclick="checkInput_6(); return false;"
-        style="color:white;background-color:brown;padding:
-        2%;border-color:brown;">Respond</button> </td>
+      <td>
+        <div class="btn dropdown" >
+          <button class="dropbtn">Respond</button>
+          <div class="dropdown-content" style="margin-top:0px;margin-left:0px;padding:0px;">
+            <a onclick="confirm()" >Confirm</a>
+            <a onclick="delete()" >Deny</a>
+          </div>
+        </div></td>
       </tr>
 
       </table>
@@ -74,7 +80,8 @@
 
 </div><!-- Footer -->
 <script>
-  var lang = document.getElementById("course_approve");
+  var course_2 = document.getElementById("course_approve");
+  var lang = document.getElementById("lang_approve");
   var area = document.getElementById("area_approve");
 
   var initial_lang = localStorage.getItem("primary_preference_language");
@@ -83,14 +90,15 @@
   var initial_area = localStorage.getItem("area");
   var updated_area = localStorage.getItem("updated_area");
 
+  course_2.innerHTML = localStorage.getItem("course");
   lang.innerHTML = updated_lang;
   area.innerHTML = updated_area;
 
   if(initial_lang != updated_lang){
-    alert("has to change");
+    lang.style.backgroundColor = 'pink';
   }
   if(initial_area != updated_area){
-    alert("This has to change too!")
+    area.style.backgroundColor = 'pink';
   }
 
 </script>
